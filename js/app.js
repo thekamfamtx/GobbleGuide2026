@@ -1,11 +1,21 @@
+const themeVideoLink = "YOUR_YOUTUBE_EMBED_LINK_HERE";
+
+
 document
 .getElementById("themeButton")
 .addEventListener("click", function(){
 
-    window.open(
-        "https://youtu.be/W-jb4GxRmuQ?si=wyq13EbsR-wa3Kvt",
-        "_blank"
-    );
+    const videoSection = document.getElementById("themeVideo");
+    const videoFrame = document.getElementById("youtubeVideo");
+
+
+    videoFrame.src = themeVideoLink + "?autoplay=1";
+
+
+    videoSection.style.display = "block";
+
+
+    this.style.display = "none";
 
 });
 

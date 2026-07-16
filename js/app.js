@@ -1,4 +1,4 @@
-const themeVideoLink = "YOUR_YOUTUBE_EMBED_LINK_HERE";
+const themeVideoLink = "https://www.youtube.com/embed/W-jb4GxRmuQ";
 
 
 document
@@ -8,12 +8,9 @@ document
     const videoSection = document.getElementById("themeVideo");
     const videoFrame = document.getElementById("youtubeVideo");
 
-
     videoFrame.src = themeVideoLink + "?autoplay=1";
 
-
     videoSection.style.display = "block";
-
 
     this.style.display = "none";
 

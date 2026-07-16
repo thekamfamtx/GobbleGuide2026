@@ -184,3 +184,7 @@ footer{
     color:#777;
 
 }
+
+.hidden-event {
+    display: none;
+}

@@ -3,7 +3,7 @@ document
 .addEventListener("click", function(){
 
     window.open(
-        "YOUR_MERCH_STORE_LINK_HERE",
+        "https://the-kam-fam-shop.fourthwall.com/collections/gobble-til-you-wobble",
         "_blank"
     );
 

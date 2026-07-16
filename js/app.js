@@ -1,15 +1,19 @@
 document
 .getElementById("themeButton")
-.addEventListener("click",function(){
+.addEventListener("click", function(){
 
-    // We'll put your YouTube Theme link here later.
+    window.open(
+        "https://youtu.be/W-jb4GxRmuQ?si=wyq13EbsR-wa3Kvt",
+        "_blank"
+    );
 
 });
 
+
 document
 .getElementById("enterButton")
-.addEventListener("click",function(){
+.addEventListener("click", function(){
 
-    window.location.href="pages/home.html";
+    window.location.href = "pages/home.html";
 
 });

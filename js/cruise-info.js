@@ -3,7 +3,7 @@ document
 .addEventListener("click", function(){
 
     window.open(
-        "YOUR_PACKING_VIDEO_LINK_HERE",
+        "https://youtu.be/hukwm7BdNfQ",
         "_blank"
     );
 

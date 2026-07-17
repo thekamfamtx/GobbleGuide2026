@@ -1,42 +1,54 @@
-/* ==========================
-   GOBBLE GUIDE DESIGN SYSTEM
+/* ==========================================
+   Gobble Guide 2.0
    The KAM Fam
-   ========================== */
+========================================== */
 
+/* ---------- GOOGLE FONT ---------- */
 
-/* COLORS */
-
-:root {
-
-    --orange: #F7941D;
-    --gold: #FDCB2D;
-    --green: #2E7D32;
-    --blue: #0B5FA5;
-    --cream: #FFF8E7;
-    --white: #FFFFFF;
-    --dark: #222222;
-
-}
-
-
-/* RESET */
-
-* {
-    box-sizing: border-box;
-}
-
-
-body {
-
+*{
     margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
-    font-family:'Poppins', sans-serif;
+/* ---------- COLORS ---------- */
+
+:root{
+
+    --orange:#F7941D;
+    --gold:#FDBB30;
+
+    --blue:#157EFB;
+
+    --green:#2E8B57;
+
+    --purple:#8E44AD;
+
+    --red:#E74C3C;
+
+    --light:#F5F8FC;
+
+    --white:#FFFFFF;
+
+    --dark:#222;
+
+    --gray:#666;
+
+}
+
+
+/* ---------- BODY ---------- */
+
+body{
+
+    font-family:'Poppins',sans-serif;
 
     background:
     linear-gradient(
         180deg,
-        #dff6ff,
-        #ffffff
+        #dff3ff 0%,
+        #f7fbff 45%,
+        #ffffff 100%
     );
 
     color:var(--dark);
@@ -46,12 +58,11 @@ body {
 }
 
 
+/* ---------- CONTAINER ---------- */
 
-/* MAIN CONTAINER */
+.container{
 
-.container {
-
-    max-width:500px;
+    max-width:600px;
 
     margin:auto;
 
@@ -60,292 +71,346 @@ body {
 }
 
 
+/* ---------- HERO ---------- */
 
-/* HEADER */
-
-.app-header {
+.hero{
 
     text-align:center;
 
-    padding:20px 10px;
+    margin-bottom:30px;
 
 }
 
 
-.app-header img {
+.hero-banner{
 
-    width:90%;
+    width:100%;
 
-    max-width:350px;
+    max-width:460px;
+
+    margin:auto;
+
+    display:block;
 
 }
 
 
-
-.app-header h1 {
+.hero h1{
 
     color:var(--orange);
 
-    font-size:32px;
+    font-size:42px;
 
-    margin:10px 0 5px;
+    font-weight:800;
+
+    margin-top:15px;
+
+}
+
+
+.subtitle{
+
+    color:var(--gray);
+
+    font-size:18px;
+
+    margin-top:5px;
+
+}
+
+
+/* ---------- CARDS ---------- */
+
+.welcome-card,
+
+.countdown-card{
+
+    background:white;
+
+    border-radius:24px;
+
+    padding:25px;
+
+    margin-bottom:25px;
+
+    box-shadow:
+    0 12px 30px rgba(0,0,0,.10);
+
+}
+
+
+.welcome-card h2,
+
+.countdown-card h2{
+
+    color:var(--green);
+
+    margin-bottom:15px;
+
+    text-align:center;
+
+}
+
+
+.welcome-card p{
+
+    line-height:1.7;
+
+    text-align:center;
+
+}
+
+
+/* ---------- COUNTDOWN ---------- */
+
+.countdown{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:12px;
+
+    margin-top:20px;
+
+}
+
+
+.countdown div{
+
+    background:
+
+    linear-gradient(
+        180deg,
+        var(--orange),
+        var(--gold)
+    );
+
+    border-radius:20px;
+
+    padding:18px 10px;
+
+    color:white;
+
+    text-align:center;
+
+}
+
+
+.countdown span{
+
+    display:block;
+
+    font-size:34px;
 
     font-weight:800;
 
 }
 
 
+.countdown label{
 
-.app-header p {
+    font-size:13px;
 
-    margin:0;
+    text-transform:uppercase;
 
-    color:#555;
-
-    font-size:16px;
-
-}
-
-
-
-/* CARDS */
-
-.card,
-.countdown-card {
-
-    background:var(--white);
-
-    border-radius:22px;
-
-    padding:20px;
-
-    margin:20px 0;
-
-    box-shadow:
-
-    0 8px 20px rgba(0,0,0,.12);
-
-    border-top:
-
-    6px solid var(--orange);
+    letter-spacing:1px;
 
 }
 
 
-
-/* HEADINGS */
-
-h2 {
+.sail-date{
 
     text-align:center;
 
-    color:var(--green);
+    margin-top:20px;
+
+    color:var(--gray);
+
+    font-weight:600;
 
 }
 
 
-h3 {
+/* ---------- MENU CARDS ---------- */
 
-    margin-top:0;
-
-    color:var(--blue);
-
-}
-
-
-
-/* MENU CARDS */
-
-
-.menu-card {
-
+.menu-card{
 
     display:flex;
 
     align-items:center;
 
-    gap:18px;
-
-
-    background:white;
-
-    border-radius:20px;
-
-    padding:18px;
-
-    margin:15px 0;
-
+    gap:20px;
 
     text-decoration:none;
 
-    color:var(--dark);
+    color:inherit;
 
+    background:white;
+
+    border-radius:22px;
+
+    padding:20px;
+
+    margin-bottom:18px;
 
     box-shadow:
+    0 10px 25px rgba(0,0,0,.10);
 
-    0 6px 15px rgba(0,0,0,.12);
-
-
-    transition:.25s;
-
+    transition:.30s;
 
 }
 
 
+.menu-card:hover{
 
-.menu-card:hover {
+    transform:translateY(-6px);
 
-
-    transform:translateY(-4px);
-
-}
-
-
-
-.menu-icon {
-
-    font-size:40px;
+    box-shadow:
+    0 18px 35px rgba(0,0,0,.18);
 
 }
 
 
+.menu-icon{
 
-.menu-card h3 {
+    width:70px;
 
-    margin:0;
+    height:70px;
 
-    color:var(--orange);
+    border-radius:18px;
 
-}
+    display:flex;
 
+    justify-content:center;
 
+    align-items:center;
 
-.menu-card p {
-
-    margin:5px 0 0;
-
-    color:#666;
-
-}
-
-
-
-/* BUTTONS */
-
-
-button {
-
-
-    width:100%;
-
-    padding:15px;
-
-    margin:10px 0;
-
-
-    border:none;
-
-    border-radius:25px;
-
-
-    background:
-
-    linear-gradient(
-    90deg,
-    var(--orange),
-    var(--gold)
-    );
-
+    font-size:34px;
 
     color:white;
 
-    font-size:17px;
-
-    font-weight:700;
+}
 
 
-    cursor:pointer;
+/* Different color for every card */
 
+.menu-card:nth-of-type(1) .menu-icon{
 
-    box-shadow:
+    background:var(--blue);
 
-    0 5px 12px rgba(0,0,0,.15);
+}
+
+.menu-card:nth-of-type(2) .menu-icon{
+
+    background:var(--orange);
+
+}
+
+.menu-card:nth-of-type(3) .menu-icon{
+
+    background:var(--red);
+
+}
+
+.menu-card:nth-of-type(4) .menu-icon{
+
+    background:var(--purple);
+
+}
+
+.menu-card:nth-of-type(5) .menu-icon{
+
+    background:var(--green);
 
 }
 
 
+.menu-card h3{
 
-/* COUNTDOWN */
+    font-size:22px;
+
+    margin-bottom:5px;
+
+}
 
 
-.countdown-number {
+.menu-card p{
 
+    color:var(--gray);
+
+}
+
+
+/* ---------- FOOTER ---------- */
+
+footer{
+
+    margin-top:45px;
 
     text-align:center;
 
-    font-size:48px;
-
-    font-weight:800;
-
-    color:var(--orange);
-
+    padding-bottom:40px;
 
 }
 
 
+.hosted{
 
-/* FOOTER */
+    color:var(--gray);
 
+    margin-bottom:15px;
 
-footer {
-
-
-    text-align:center;
-
-    padding:30px 10px;
-
-
-    color:#555;
-
+    font-weight:600;
 
 }
 
 
-footer img {
+.footer-logo{
 
+    width:150px;
 
-    max-width:130px;
-
-}
-
-
-
-/* HIDDEN EVENTS */
-
-.hidden-event {
-
-    display:none;
+    margin-bottom:15px;
 
 }
 
 
-/* MOBILE */
+/* ---------- MOBILE ---------- */
 
 @media(max-width:600px){
 
+.hero h1{
 
-.container {
-
-    padding:15px;
+    font-size:34px;
 
 }
 
+.subtitle{
 
-h1 {
+    font-size:16px;
+
+}
+
+.countdown{
+
+    grid-template-columns:repeat(2,1fr);
+
+}
+
+.menu-card{
+
+    padding:18px;
+
+}
+
+.menu-icon{
+
+    width:60px;
+
+    height:60px;
 
     font-size:28px;
 
 }
-
 
 }

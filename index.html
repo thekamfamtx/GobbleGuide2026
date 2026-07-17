@@ -1,83 +1,228 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Gobble Guide</title>
+<meta charset="UTF-8">
 
-    <meta name="theme-color" content="#8B0000">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="manifest" href="manifest.json">
-    <link rel="stylesheet" href="css/style.css">
-</head>
+<title>Gobble Guide</title>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+
 <body>
 
 <div class="container">
 
-    <img src="images/logo.png" class="logo" alt="Gobble Til You Wobble Logo">
+<header class="hero">
 
-    <h1>Gobble Guide</h1>
+<img
+class="hero-banner"
+src="images/gobble-banner.png"
+alt="Gobble Til You Wobble">
 
-    <h2>Gobble Til You Wobble Cruise</h2>
+<h1>Gobble Guide</h1>
 
-    <p class="subtitle">
-        Official Companion App
-    </p>
+<p class="subtitle">
 
-    <div class="countdown-card">
+Your Official Cruise Companion
 
-        <div id="countdown">
-            Loading Countdown...
-        </div>
+</p>
 
-    </div>
-
-<button id="themeButton">
-    ▶️ Play Official Cruise Theme
-</button>
+</header>
 
 
-<div id="themeVideo" class="video-container" style="display:none;">
 
-    <h3>
-        🎵 Official Cruise Theme
-    </h3>
+<section class="welcome-card">
 
-    <iframe
-        id="youtubeVideo"
-        width="100%"
-        height="250"
-        src=""
-        title="Gobble Til You Wobble Cruise Theme"
-        frameborder="0"
-        allow="autoplay; encrypted-media"
-        allowfullscreen>
-    </iframe>
+<h2 id="greeting">
+
+Welcome Cruiser!
+
+</h2>
+
+<p>
+
+Welcome aboard the Gobble Til You Wobble Cruise!
+
+Use Gobble Guide before, during and after the cruise to stay connected with KAM Fam events, exclusive merchandise, cruise information, videos and memories.
+
+</p>
+
+</section>
+
+
+
+<section class="countdown-card">
+
+<h2>
+
+🛳 Countdown to Sailaway
+
+</h2>
+
+<div class="countdown">
+
+<div>
+
+<span id="days">0</span>
+
+<label>Days</label>
 
 </div>
 
-    <button id="enterButton">
-        🚢 Enter Gobble Guide
-    </button>
+<div>
 
-    <footer>
+<span id="hours">0</span>
 
-        Presented by
-
-        <strong>The KAM Fam</strong>
-
-    </footer>
+<label>Hours</label>
 
 </div>
 
-<script src="js/countdown.js"></script>
+<div>
+
+<span id="minutes">0</span>
+
+<label>Minutes</label>
+
+</div>
+
+<div>
+
+<span id="seconds">0</span>
+
+<label>Seconds</label>
+
+</div>
+
+</div>
+
+<p class="sail-date">
+
+Saturday • November 21, 2026
+
+10:00 AM CST
+
+</p>
+
+</section>
+
+
+
+<a class="menu-card" href="pages/schedule.html">
+
+<div class="menu-icon">📅</div>
+
+<div>
+
+<h3>Schedule</h3>
+
+<p>KAM Fam Events</p>
+
+</div>
+
+</a>
+
+
+
+<a class="menu-card" href="pages/merch.html">
+
+<div class="menu-icon">🛍</div>
+
+<div>
+
+<h3>Merch</h3>
+
+<p>Official Cruise Merchandise</p>
+
+</div>
+
+</a>
+
+
+
+<a class="menu-card" href="pages/videos.html">
+
+<div class="menu-icon">🎥</div>
+
+<div>
+
+<h3>Videos</h3>
+
+<p>Live Streams & Cruise Updates</p>
+
+</div>
+
+</a>
+
+
+
+<a class="menu-card" href="pages/memories.html">
+
+<div class="menu-icon">📸</div>
+
+<div>
+
+<h3>Memories</h3>
+
+<p>Relive the Adventure</p>
+
+</div>
+
+</a>
+
+
+
+<a class="menu-card" href="pages/cruise-info.html">
+
+<div class="menu-icon">ℹ️</div>
+
+<div>
+
+<h3>Cruise Info</h3>
+
+<p>Everything You Need Before Sailing</p>
+
+</div>
+
+</a>
+
+
+
+<footer>
+
+<p class="hosted">
+
+Hosted by
+
+</p>
+
+<img
+class="footer-logo"
+src="images/kam-logo.png"
+alt="The KAM Fam">
+
+<p>
+
+© 2026 The KAM Fam
+
+</p>
+
+</footer>
+
+</div>
+
 <script src="js/app.js"></script>
 
 </body>
+
 </html>

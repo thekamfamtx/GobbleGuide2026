@@ -1,9 +1,7 @@
-/* ==========================================
-   Gobble Guide 2.0
-   The KAM Fam
-========================================== */
-
-/* ---------- GOOGLE FONT ---------- */
+/* ===================================================
+   Gobble Guide Version 2.0
+   Created for The KAM Fam
+=================================================== */
 
 *{
     margin:0;
@@ -11,33 +9,18 @@
     box-sizing:border-box;
 }
 
-/* ---------- COLORS ---------- */
-
 :root{
 
     --orange:#F7941D;
     --gold:#FDBB30;
-
-    --blue:#157EFB;
-
-    --green:#2E8B57;
-
-    --purple:#8E44AD;
-
-    --red:#E74C3C;
-
-    --light:#F5F8FC;
-
+    --blue:#0F6CBD;
+    --brown:#6D4C41;
+    --light:#F6F7F9;
     --white:#FFFFFF;
-
-    --dark:#222;
-
-    --gray:#666;
+    --text:#1F2937;
+    --shadow:0 10px 30px rgba(0,0,0,.12);
 
 }
-
-
-/* ---------- BODY ---------- */
 
 body{
 
@@ -46,41 +29,34 @@ body{
     background:
     linear-gradient(
         180deg,
-        #dff3ff 0%,
-        #f7fbff 45%,
-        #ffffff 100%
+        #dff5ff 0%,
+        #ffffff 40%,
+        #f6f7f9 100%
     );
 
-    color:var(--dark);
-
-    min-height:100vh;
+    color:var(--text);
 
 }
-
-
-/* ---------- CONTAINER ---------- */
 
 .container{
 
-    max-width:600px;
+    width:min(100%,650px);
 
     margin:auto;
 
-    padding:20px;
+    padding:25px;
 
 }
 
-
-/* ---------- HERO ---------- */
+/* ---------------- HERO ---------------- */
 
 .hero{
 
     text-align:center;
 
-    margin-bottom:30px;
+    margin-bottom:25px;
 
 }
-
 
 .hero-banner{
 
@@ -88,18 +64,17 @@ body{
 
     max-width:460px;
 
-    margin:auto;
-
     display:block;
 
-}
+    margin:auto;
 
+}
 
 .hero h1{
 
     color:var(--orange);
 
-    font-size:42px;
+    font-size:3rem;
 
     font-weight:800;
 
@@ -107,61 +82,65 @@ body{
 
 }
 
-
 .subtitle{
 
-    color:var(--gray);
+    font-size:1.15rem;
 
-    font-size:18px;
-
-    margin-top:5px;
+    color:#555;
 
 }
 
+/* ---------------- CARDS ---------------- */
 
-/* ---------- CARDS ---------- */
-
-.welcome-card,
-
-.countdown-card{
+.card{
 
     background:white;
 
-    border-radius:24px;
+    border-radius:28px;
 
     padding:25px;
 
     margin-bottom:25px;
 
-    box-shadow:
-    0 12px 30px rgba(0,0,0,.10);
+    box-shadow:var(--shadow);
 
 }
 
-
-.welcome-card h2,
-
-.countdown-card h2{
-
-    color:var(--green);
+.card h2{
 
     margin-bottom:15px;
 
-    text-align:center;
+    color:var(--blue);
 
 }
 
+/* ---------------- VIDEO ---------------- */
 
-.welcome-card p{
+.video-wrapper{
 
-    line-height:1.7;
+    position:relative;
 
-    text-align:center;
+    overflow:hidden;
+
+    border-radius:22px;
+
+    box-shadow:var(--shadow);
+
+    aspect-ratio:16/9;
 
 }
 
+.video-wrapper iframe{
 
-/* ---------- COUNTDOWN ---------- */
+    width:100%;
+
+    height:100%;
+
+    border:0;
+
+}
+
+/* ---------------- COUNTDOWN ---------------- */
 
 .countdown{
 
@@ -175,42 +154,38 @@ body{
 
 }
 
-
-.countdown div{
+.count-box{
 
     background:
-
     linear-gradient(
         180deg,
         var(--orange),
         var(--gold)
     );
 
-    border-radius:20px;
-
-    padding:18px 10px;
-
     color:white;
+
+    border-radius:22px;
 
     text-align:center;
 
+    padding:18px 10px;
+
+    box-shadow:var(--shadow);
+
 }
 
-
-.countdown span{
+.count-box span{
 
     display:block;
 
-    font-size:34px;
+    font-size:2rem;
 
     font-weight:800;
 
 }
 
-
-.countdown label{
-
-    font-size:13px;
+.count-box small{
 
     text-transform:uppercase;
 
@@ -218,176 +193,102 @@ body{
 
 }
 
+/* ---------------- BUTTON ---------------- */
 
-.sail-date{
+.enter-btn{
+
+    display:block;
+
+    width:100%;
 
     text-align:center;
-
-    margin-top:20px;
-
-    color:var(--gray);
-
-    font-weight:600;
-
-}
-
-
-/* ---------- MENU CARDS ---------- */
-
-.menu-card{
-
-    display:flex;
-
-    align-items:center;
-
-    gap:20px;
 
     text-decoration:none;
 
-    color:inherit;
-
-    background:white;
-
-    border-radius:22px;
+    margin-top:30px;
 
     padding:20px;
 
-    margin-bottom:18px;
+    font-size:1.3rem;
 
-    box-shadow:
-    0 10px 25px rgba(0,0,0,.10);
-
-    transition:.30s;
-
-}
-
-
-.menu-card:hover{
-
-    transform:translateY(-6px);
-
-    box-shadow:
-    0 18px 35px rgba(0,0,0,.18);
-
-}
-
-
-.menu-icon{
-
-    width:70px;
-
-    height:70px;
-
-    border-radius:18px;
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    font-size:34px;
+    font-weight:700;
 
     color:white;
 
-}
+    background:
+    linear-gradient(
+        90deg,
+        var(--orange),
+        var(--gold)
+    );
 
+    border-radius:50px;
 
-/* Different color for every card */
+    box-shadow:0 15px 35px rgba(247,148,29,.35);
 
-.menu-card:nth-of-type(1) .menu-icon{
+    transition:.3s;
 
-    background:var(--blue);
-
-}
-
-.menu-card:nth-of-type(2) .menu-icon{
-
-    background:var(--orange);
-
-}
-
-.menu-card:nth-of-type(3) .menu-icon{
-
-    background:var(--red);
+    animation:pulse 2.5s infinite;
 
 }
 
-.menu-card:nth-of-type(4) .menu-icon{
+.enter-btn:hover{
 
-    background:var(--purple);
-
-}
-
-.menu-card:nth-of-type(5) .menu-icon{
-
-    background:var(--green);
+    transform:translateY(-3px);
 
 }
 
-
-.menu-card h3{
-
-    font-size:22px;
-
-    margin-bottom:5px;
-
-}
-
-
-.menu-card p{
-
-    color:var(--gray);
-
-}
-
-
-/* ---------- FOOTER ---------- */
+/* ---------------- FOOTER ---------------- */
 
 footer{
 
-    margin-top:45px;
-
     text-align:center;
 
-    padding-bottom:40px;
+    margin-top:40px;
 
 }
-
-
-.hosted{
-
-    color:var(--gray);
-
-    margin-bottom:15px;
-
-    font-weight:600;
-
-}
-
 
 .footer-logo{
 
-    width:150px;
+    width:170px;
 
-    margin-bottom:15px;
+    margin:20px auto;
+
+    display:block;
 
 }
 
+/* ---------------- ANIMATION ---------------- */
 
-/* ---------- MOBILE ---------- */
+@keyframes pulse{
 
-@media(max-width:600px){
+    0%{
+
+        transform:scale(1);
+
+    }
+
+    50%{
+
+        transform:scale(1.03);
+
+    }
+
+    100%{
+
+        transform:scale(1);
+
+    }
+
+}
+
+/* ---------------- MOBILE ---------------- */
+
+@media(max-width:650px){
 
 .hero h1{
 
-    font-size:34px;
-
-}
-
-.subtitle{
-
-    font-size:16px;
+    font-size:2.3rem;
 
 }
 
@@ -397,19 +298,21 @@ footer{
 
 }
 
-.menu-card{
+.container{
 
     padding:18px;
 
 }
 
-.menu-icon{
+.card{
 
-    width:60px;
+    padding:20px;
 
-    height:60px;
+}
 
-    font-size:28px;
+.enter-btn{
+
+    font-size:1.1rem;
 
 }
 

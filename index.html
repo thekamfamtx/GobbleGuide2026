@@ -1,128 +1,132 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Gobble Guide</title>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link rel="stylesheet" href="css/style.css" />
+    <title>Gobble Guide</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+
 </head>
 
-<body class="welcome-body">
+<body>
 
-  <div class="welcome-container">
+<div class="container">
 
-    <!-- Gobble Banner -->
-    <img
-      class="welcome-banner"
-      src="images/gobble-banner.png"
-      alt="Gobble Til You Wobble"
-    />
+    <header class="hero">
 
-    <!-- App Title -->
-    <h1 class="welcome-title">Gobble Guide</h1>
+        <img src="images/gobble-banner.png" class="footer-logo" alt="The KAM Fam Logo">
 
-    <!-- Dynamic Greeting -->
-    <h2 class="welcome-greeting" id="welcomeGreeting">
-      Welcome, Cruiser!
-    </h2>
+        <h1>Gobble Guide</h1>
 
-    <p class="welcome-subtitle">
-      Welcome to your official cruise companion.
-    </p>
+        <p class="subtitle">
+            Your Official Gobble Til You Wobble Cruise Companion
+        </p>
 
-    <!-- Theme Song -->
-    <div class="video-card">
+    </header>
 
-      <h3>🎵 Official Theme Song</h3>
+    <section class="card">
 
-      <div class="video-wrapper">
+        <h2 id="greeting">
+            Welcome Cruiser!
+        </h2>
 
-        <iframe
-          src="https://www.youtube.com/embed/W-jb4GxRmuQ"
-          title="Gobble Til You Wobble Theme Song"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowfullscreen>
+        <p>
+            We can't wait to sail with you aboard the Gobble Til You Wobble Cruise!
+        </p>
 
-        </iframe>
+    </section>
 
-      </div>
+    <section class="card">
 
-    </div>
+        <h2>
+            🎵 Official Theme Song
+        </h2>
 
-    <!-- Countdown -->
-    <div class="countdown-card">
+        <div class="video-wrapper">
 
-      <h3>⏳ Countdown to Sailaway</h3>
-
-      <div class="countdown-grid">
-
-        <div class="countdown-box">
-
-          <span id="days">0</span>
-
-          <label>Days</label>
+            <iframe
+                src="https://www.youtube.com/embed/W-jb4GxRmuQ"
+                title="Gobble Til You Wobble Theme Song"
+                allowfullscreen>
+            </iframe>
 
         </div>
 
-        <div class="countdown-box">
+    </section>
 
-          <span id="hours">0</span>
+    <section class="card">
 
-          <label>Hours</label>
+        <h2>
+            ⏳ Countdown to Sailaway
+        </h2>
+
+        <div class="countdown">
+
+            <div class="count-box">
+
+                <span id="days">0</span>
+
+                <small>Days</small>
+
+            </div>
+
+            <div class="count-box">
+
+                <span id="hours">0</span>
+
+                <small>Hours</small>
+
+            </div>
+
+            <div class="count-box">
+
+                <span id="minutes">0</span>
+
+                <small>Minutes</small>
+
+            </div>
+
+            <div class="count-box">
+
+                <span id="seconds">0</span>
+
+                <small>Seconds</small>
+
+            </div>
 
         </div>
 
-        <div class="countdown-box">
+    </section>
 
-          <span id="minutes">0</span>
-
-          <label>Minutes</label>
-
-        </div>
-
-        <div class="countdown-box">
-
-          <span id="seconds">0</span>
-
-          <label>Seconds</label>
-
-        </div>
-
-      </div>
-
-      <p class="sail-date">
-        Saturday • November 21, 2026 • 10:00 AM CST
-      </p>
-
-    </div>
-
-    <!-- Main Button -->
-    <a href="pages/home.html" class="wobble-button">
-      🚢 WOBBLE TO THE FUN!
+    <a href="pages/home.html" class="home-btn">
+        🚢 WOBBLE TO THE FUN!
     </a>
 
-    <!-- Footer -->
-    <div class="welcome-footer">
+    <footer>
 
-      <p>Presented by</p>
+        <p>
+            Hosted by
+        </p>
 
-      <img
-        class="footer-logo"
-        src="images/kam-logo.png"
-        alt="The KAM Fam"
-      />
+        <img src="images/kam-logo.png" class="footer-logo" alt="The KAM Fam Logo">
 
-    </div>
+    </footer>
 
-  </div>
+</div>
 
-  <script src="js/app.js"></script>
+<script src="js/app.js"></script>
 
+</body>
+
+</html>
 </body>
 </html>

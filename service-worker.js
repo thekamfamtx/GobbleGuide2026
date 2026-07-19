@@ -1,4 +1,4 @@
-const CACHE_NAME = "gobble-guide-test3";
+const CACHE_NAME = "gobble-guide-final";
 
 const urlsToCache = [
   "./",
@@ -12,7 +12,14 @@ const urlsToCache = [
   "./pages/schedule.html",
   "./pages/videos.html",
   "./pages/memories.html",
-  "./pages/merch.html"
+  "./pages/merch.html",
+
+  "./images/gobble-banner.png",
+  "./images/kam-logo.png",
+
+  "./icons/icon-192.png",
+  "./icons/icon-512.png",
+  "./icons/apple-touch-icon.png"
 ];
 self.addEventListener("install", event => {
 

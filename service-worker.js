@@ -1,4 +1,4 @@
-const CACHE_NAME = "gobble-guide-v1";
+const CACHE_NAME = "gobble-guide-v2";
 
 const urlsToCache = [
   "/",

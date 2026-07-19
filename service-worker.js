@@ -1,27 +1,8 @@
-const CACHE_NAME = "gobble-guide-v2";
+const CACHE_NAME = "gobble-guide-test";
 
 const urlsToCache = [
-  "/",
-  "/index.html",
-  "/manifest.json",
-
-  "/css/style.css",
-
-  "/js/app.js",
-
-  "/images/gobble-banner.png",
-  "/images/kam-logo.png",
-
-  "/icons/icon-192.png",
-  "/icons/icon-512.png",
-  "/icons/apple-touch-icon.png",
-
-  "/pages/home.html",
-  "/pages/cruise-info.html",
-  "/pages/schedule.html",
-  "/pages/videos.html",
-  "/pages/memories.html",
-  "/pages/merch.html"
+  "./",
+  "./index.html"
 ];
 
 self.addEventListener("install", event => {

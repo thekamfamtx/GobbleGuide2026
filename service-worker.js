@@ -1,1 +1,57 @@
+const CACHE_NAME = "gobble-guide-v1";
 
+const urlsToCache = [
+  "/",
+  "/index.html",
+  "/manifest.json",
+
+  "/css/style.css",
+
+  "/js/app.js",
+
+  "/images/gobble-banner.png",
+  "/images/kam-logo.png",
+
+  "/icons/icon-192.png",
+  "/icons/icon-512.png",
+  "/icons/apple-touch-icon.png",
+
+  "/pages/home.html",
+  "/pages/cruise-info.html",
+  "/pages/schedule.html",
+  "/pages/videos.html",
+  "/pages/memories.html",
+  "/pages/merch.html"
+];
+
+self.addEventListener("install", event => {
+
+  event.waitUntil(
+
+    caches.open(CACHE_NAME)
+
+      .then(cache => {
+
+        return cache.addAll(urlsToCache);
+
+      })
+
+  );
+
+});
+
+self.addEventListener("fetch", event => {
+
+  event.respondWith(
+
+    caches.match(event.request)
+
+      .then(response => {
+
+        return response || fetch(event.request);
+
+      })
+
+  );
+
+});

@@ -133,6 +133,7 @@ if ("serviceWorker" in navigator) {
 
 const shipButton = document.getElementById("shipModeBtn");
 const offlineStatus = document.getElementById("offlineStatus");
+const lastUpdated = document.getElementById("lastUpdated");
 
 if (shipButton) {
 
@@ -182,8 +183,18 @@ const filesToDownload = [
             }
 
 
-            offlineStatus.innerHTML =
-                "✅ Gobble Guide is ready! You can now use it without WiFi.";
+  const updateTime = new Date();
+
+localStorage.setItem(
+    "gobbleGuideUpdated",
+    updateTime.toLocaleString()
+);
+
+offlineStatus.innerHTML =
+"✅ Gobble Guide is ready! You can now use it without WiFi.";
+
+lastUpdated.innerHTML =
+"Last updated: " + updateTime.toLocaleString();
 
         }
 
@@ -198,4 +209,11 @@ const filesToDownload = [
 
     });
 
+}
+
+const savedUpdate = localStorage.getItem("gobbleGuideUpdated");
+
+if (savedUpdate && lastUpdated) {
+    lastUpdated.innerHTML =
+    "Last updated: " + savedUpdate;
 }

@@ -130,3 +130,26 @@ if ("serviceWorker" in navigator) {
     });
 
 }
+
+const shipButton = document.getElementById("shipModeBtn");
+const offlineStatus = document.getElementById("offlineStatus");
+
+if (shipButton) {
+  shipButton.addEventListener("click", async () => {
+
+    offlineStatus.innerHTML = "⏳ Downloading latest cruise information...";
+
+    if ("serviceWorker" in navigator) {
+      const registration = await navigator.serviceWorker.ready;
+
+      await registration.update();
+
+      offlineStatus.innerHTML =
+        "✅ Gobble Guide is ready! You can now use the app offline.";
+    } else {
+      offlineStatus.innerHTML =
+        "⚠️ Offline mode is not available on this device.";
+    }
+
+  });
+}

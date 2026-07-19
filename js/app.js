@@ -145,24 +145,28 @@ if (shipButton) {
 
             const cache = await caches.open("gobble-guide-final");
 
-            const filesToDownload = [
-                "./",
-                "./index.html",
-                "./manifest.json",
-                "./css/style.css",
-                "./js/app.js",
-                "./pages/home.html",
-                "./pages/cruise-info.html",
-                "./pages/schedule.html",
-                "./pages/videos.html",
-                "./pages/memories.html",
-                "./pages/merch.html",
-                "./images/gobble-banner.png",
-                "./images/kam-logo.png",
-                "./icons/icon-192.png",
-                "./icons/icon-512.png",
-                "./icons/apple-touch-icon.png"
-            ];
+const basePath = window.location.pathname.includes("/pages/")
+    ? "../"
+    : "./";
+
+const filesToDownload = [
+    basePath,
+    basePath + "index.html",
+    basePath + "manifest.json",
+    basePath + "css/style.css",
+    basePath + "js/app.js",
+    basePath + "pages/home.html",
+    basePath + "pages/cruise-info.html",
+    basePath + "pages/schedule.html",
+    basePath + "pages/videos.html",
+    basePath + "pages/memories.html",
+    basePath + "pages/merch.html",
+    basePath + "images/gobble-banner.png",
+    basePath + "images/kam-logo.png",
+    basePath + "icons/icon-192.png",
+    basePath + "icons/icon-512.png",
+    basePath + "icons/apple-touch-icon.png"
+];
 
             let count = 0;
 

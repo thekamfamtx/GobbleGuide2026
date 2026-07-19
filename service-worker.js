@@ -1,10 +1,12 @@
-const CACHE_NAME = "gobble-guide-test";
+const CACHE_NAME = "gobble-guide-test2";
 
 const urlsToCache = [
   "./",
-  "./index.html"
+  "./index.html",
+  "./manifest.json",
+  "./css/style.css",
+  "./js/app.js"
 ];
-
 self.addEventListener("install", event => {
 
   event.waitUntil(

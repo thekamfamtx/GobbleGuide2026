@@ -135,22 +135,63 @@ const shipButton = document.getElementById("shipModeBtn");
 const offlineStatus = document.getElementById("offlineStatus");
 
 if (shipButton) {
-  shipButton.addEventListener("click", async () => {
 
-    offlineStatus.innerHTML = "⏳ Downloading latest cruise information...";
+    shipButton.addEventListener("click", async () => {
 
-    if ("serviceWorker" in navigator) {
-      const registration = await navigator.serviceWorker.ready;
+        offlineStatus.innerHTML =
+            "🚢 Preparing Gobble Guide for the ship...";
 
-      await registration.update();
+        try {
 
-      offlineStatus.innerHTML =
-        "✅ Gobble Guide is ready! You can now use the app offline.";
-    } else {
-      offlineStatus.innerHTML =
-        "⚠️ Offline mode is not available on this device.";
-    }
+            const cache = await caches.open("gobble-guide-final");
 
-  });
+            const filesToDownload = [
+                "./",
+                "./index.html",
+                "./manifest.json",
+                "./css/style.css",
+                "./js/app.js",
+                "./pages/home.html",
+                "./pages/cruise-info.html",
+                "./pages/schedule.html",
+                "./pages/videos.html",
+                "./pages/memories.html",
+                "./pages/merch.html",
+                "./images/gobble-banner.png",
+                "./images/kam-logo.png",
+                "./icons/icon-192.png",
+                "./icons/icon-512.png",
+                "./icons/apple-touch-icon.png"
+            ];
+
+            let count = 0;
+
+            for (const file of filesToDownload) {
+
+                await cache.add(file);
+
+                count++;
+
+                offlineStatus.innerHTML =
+                    `🚢 Downloading cruise guide... ${count}/${filesToDownload.length}`;
+
+            }
+
+
+            offlineStatus.innerHTML =
+                "✅ Gobble Guide is ready! You can now use it without WiFi.";
+
+        }
+
+        catch(error) {
+
+            console.error(error);
+
+            offlineStatus.innerHTML =
+                "⚠️ Something went wrong. Please try again.";
+
+        }
+
+    });
+
 }
-

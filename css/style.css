@@ -510,3 +510,21 @@ font-weight:bold;
     transform:none;
     border:2px solid #666;
 }
+
+/* Offline Mode Note */
+
+.offline-note {
+    text-align: center;
+    font-size: 0.9rem;
+    color: #666;
+    margin-top: 10px;
+    margin-bottom: 18px;
+    line-height: 1.5;
+    max-width: 340px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.offline-note strong {
+    color: #F7941D;
+}

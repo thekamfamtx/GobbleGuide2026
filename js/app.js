@@ -242,10 +242,13 @@ window.addEventListener("load", () => {
     if (!card) return;
 
 
-    // Already installed
-    if (window.navigator.standalone === true) {
-        return;
-    }
+// Already installed as an app
+if (
+    window.navigator.standalone === true ||
+    window.matchMedia('(display-mode: standalone)').matches
+) {
+    return;
+}
 
 
 

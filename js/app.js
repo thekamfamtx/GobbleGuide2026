@@ -232,7 +232,6 @@ if (savedUpdate && lastUpdated) {
 
 function hideIphoneInstallCard() {
     document.getElementById("iphoneInstallCard").style.display = "none";
-    localStorage.setItem("iphoneInstallHidden", "true");
 }
 
 
@@ -249,10 +248,6 @@ window.addEventListener("load", () => {
     }
 
 
-    // Already dismissed
-    if (localStorage.getItem("iphoneInstallHidden")) {
-        return;
-    }
 
 
     // Detect iPhone/iPad

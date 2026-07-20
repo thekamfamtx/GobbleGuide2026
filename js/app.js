@@ -169,18 +169,25 @@ const filesToDownload = [
     basePath + "icons/apple-touch-icon.png"
 ];
 
-            let count = 0;
+offlineStatus.innerHTML =
+    "🔍 Checking for the latest Gobble Guide updates...";
 
-            for (const file of filesToDownload) {
+let count = 0;
 
-                await cache.add(file);
+for (const file of filesToDownload) {
 
-                count++;
+    const response = await fetch(file, {
+        cache: "no-store"
+    });
 
-                offlineStatus.innerHTML =
-                    `🚢 Downloading cruise guide... ${count}/${filesToDownload.length}`;
+    await cache.put(file, response.clone());
 
-            }
+    count++;
+
+    offlineStatus.innerHTML =
+        `🚢 Downloading latest updates... ${count}/${filesToDownload.length}`;
+
+}
 
 
   const updateTime = new Date();
@@ -191,7 +198,11 @@ localStorage.setItem(
 );
 
 offlineStatus.innerHTML =
-"✅ Gobble Guide is ready! You can now use it without WiFi.";
+`✅ Gobble Guide has been updated!
+
+You can now switch to Airplane Mode and continue using Gobble Guide offline.
+
+🦃 Enjoy your cruise! 🚢`;
 
 lastUpdated.innerHTML =
 "Last updated: " + updateTime.toLocaleString();

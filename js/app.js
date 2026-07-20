@@ -144,7 +144,7 @@ if (shipButton) {
 
         try {
 
-     const cache = await caches.open("gobble-guide-v1.0.1");
+   const cache = await caches.open("gobble-guide-v1.0.2");
 
 const basePath = window.location.pathname.includes("/pages/")
     ? "../"

@@ -1,4 +1,4 @@
-const CACHE_NAME = "gobble-guide-v1.0.1";
+const CACHE_NAME = "gobble-guide-v1.0.2";
 
 const urlsToCache = [
   "./",
@@ -21,34 +21,62 @@ const urlsToCache = [
   "./icons/icon-512.png",
   "./icons/apple-touch-icon.png"
 ];
+
+// INSTALL
 self.addEventListener("install", event => {
 
-  event.waitUntil(
+    self.skipWaiting();
 
-    caches.open(CACHE_NAME)
+    event.waitUntil(
 
-      .then(cache => {
+        caches.open(CACHE_NAME)
+            .then(cache => cache.addAll(urlsToCache))
 
-        return cache.addAll(urlsToCache);
-
-      })
-
-  );
+    );
 
 });
 
+// ACTIVATE
+self.addEventListener("activate", event => {
+
+    event.waitUntil(
+
+        caches.keys().then(cacheNames => {
+
+            return Promise.all(
+
+                cacheNames.map(cache => {
+
+                    if (cache !== CACHE_NAME) {
+
+                        return caches.delete(cache);
+
+                    }
+
+                })
+
+            );
+
+        })
+
+    );
+
+    self.clients.claim();
+
+});
+
+// FETCH
 self.addEventListener("fetch", event => {
 
-  event.respondWith(
+    event.respondWith(
 
-    caches.match(event.request)
+        caches.match(event.request)
+            .then(response => {
 
-      .then(response => {
+                return response || fetch(event.request);
 
-        return response || fetch(event.request);
+            })
 
-      })
-
-  );
+    );
 
 });

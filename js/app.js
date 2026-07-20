@@ -228,3 +228,41 @@ if (savedUpdate && lastUpdated) {
     lastUpdated.innerHTML =
     "Last updated: " + savedUpdate;
 }
+
+
+function hideIphoneInstallCard() {
+    document.getElementById("iphoneInstallCard").style.display = "none";
+    localStorage.setItem("iphoneInstallHidden", "true");
+}
+
+
+window.addEventListener("load", () => {
+
+    const card = document.getElementById("iphoneInstallCard");
+
+    if (!card) return;
+
+
+    // Already installed
+    if (window.navigator.standalone === true) {
+        return;
+    }
+
+
+    // Already dismissed
+    if (localStorage.getItem("iphoneInstallHidden")) {
+        return;
+    }
+
+
+    // Detect iPhone/iPad
+    const isIOS = /iphone|ipad|ipod/i.test(
+        navigator.userAgent
+    );
+
+
+    if (isIOS) {
+        card.style.display = "block";
+    }
+
+});

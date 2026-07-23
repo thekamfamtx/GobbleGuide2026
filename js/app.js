@@ -177,7 +177,7 @@ let count = 0;
 for (const file of filesToDownload) {
 
     const response = await fetch(file, {
-        cache: "no-store"
+        cache: "reload"
     });
 
     await cache.put(file, response.clone());

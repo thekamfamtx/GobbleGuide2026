@@ -28,10 +28,8 @@ self.addEventListener("install", event => {
     self.skipWaiting();
 
     event.waitUntil(
-
         caches.open(CACHE_NAME)
             .then(cache => cache.addAll(urlsToCache))
-
     );
 
 });
@@ -48,9 +46,7 @@ self.addEventListener("activate", event => {
                 cacheNames.map(cache => {
 
                     if (cache !== CACHE_NAME) {
-
                         return caches.delete(cache);
-
                     }
 
                 })
@@ -65,15 +61,35 @@ self.addEventListener("activate", event => {
 
 });
 
-// FETCH
+// FETCH (Network First)
+
 self.addEventListener("fetch", event => {
+
+    if (event.request.method !== "GET") return;
 
     event.respondWith(
 
-        caches.match(event.request)
+        fetch(event.request)
+
             .then(response => {
 
-                return response || fetch(event.request);
+                const responseClone = response.clone();
+
+                caches.open(CACHE_NAME)
+
+                    .then(cache => {
+
+                        cache.put(event.request, responseClone);
+
+                    });
+
+                return response;
+
+            })
+
+            .catch(() => {
+
+                return caches.match(event.request);
 
             })
 

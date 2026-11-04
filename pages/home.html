@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,7 +18,7 @@
 
 <link rel="stylesheet" href="../css/style.css">
 
-    <link rel="manifest" href="../manifest.json">
+<link rel="manifest" href="../manifest.json">
 
 <link rel="apple-touch-icon" href="../icons/apple-touch-icon.png">
 
@@ -59,7 +60,6 @@ We're excited you're joining us for Gobble Til You Wobble!
 </p>
 
 </section>
-
 
 
 <section class="card">
@@ -108,22 +108,59 @@ We're excited you're joining us for Gobble Til You Wobble!
 
 </section>
 
-<div id="iphoneInstallCard" class="install-card" style="display:none;">
-  <h3>🦃 Add Gobble Guide to Your iPhone</h3>
 
-  <p>
-    Get quick access during the cruise!
-  </p>
+<!-- TODAY'S KAM FAM ACTIVITIES -->
 
-  <p>
-    Tap the <strong>Share</strong> button in Safari<br>
-    then choose <strong>Add to Home Screen</strong>
-  </p>
+<section class="card" id="todaysActivitiesCard">
 
-  <button onclick="hideIphoneInstallCard()">
-    Got It
-  </button>
+<h2>🦃 Today's KAM Fam Activities</h2>
+
+<p id="todayDateLabel">
+
+Your activities will appear here during the cruise!
+
+</p>
+
+<div id="todaysActivitiesList">
+
+<p>Loading today's activities...</p>
+
 </div>
+
+<a href="schedule.html" class="btn">
+
+📅 View Full Schedule →
+
+</a>
+
+</section>
+
+
+<div id="iphoneInstallCard" class="install-card" style="display:none;">
+
+<h3>🦃 Add Gobble Guide to Your iPhone</h3>
+
+<p>
+
+Get quick access during the cruise!
+
+</p>
+
+<p>
+
+Tap the <strong>Share</strong> button in Safari<br>
+then choose <strong>Add to Home Screen</strong>
+
+</p>
+
+<button onclick="hideIphoneInstallCard()">
+
+Got It
+
+</button>
+
+</div>
+
 
 <a class="feature-card" href="cruise-info.html">
 
@@ -146,7 +183,6 @@ Everything you need before sailing.
 </div>
 
 </a>
-
 
 
 <a class="feature-card" href="schedule.html">
@@ -172,7 +208,6 @@ Meetups, activities and special events.
 </a>
 
 
-
 <a class="feature-card" href="videos.html">
 
 <div>
@@ -196,7 +231,6 @@ Ship Tour, Livestreams & Updates.
 </a>
 
 
-
 <a class="feature-card" href="merch.html">
 
 <div>
@@ -218,7 +252,6 @@ Official Gobble Til You Wobble merchandise.
 </div>
 
 </a>
-
 
 
 <a class="feature-card" href="memories.html">
@@ -245,14 +278,22 @@ Relive the Adventure.
 
 
 <button id="shipModeBtn" class="home-btn">
-    🚢 I AM ON THE SHIP!
+
+🚢 I AM ON THE SHIP!
+
 </button>
+
 <p class="offline-note">
-    📶 Before switching to Airplane Mode, tap <strong>"I AM ON THE SHIP!"</strong> to save the latest Gobble Guide updates for offline use.
+
+📶 Before switching to Airplane Mode, tap <strong>"I AM ON THE SHIP!"</strong> to save the latest Gobble Guide updates for offline use.
+
 </p>
+
 <p id="offlineStatus"></p>
 
 <p id="lastUpdated"></p>
+
+
 <footer>
 
 <p>
@@ -268,6 +309,7 @@ class="footer-logo">
 </footer>
 
 </div>
+
 
 <script src="../js/app.js"></script>
 

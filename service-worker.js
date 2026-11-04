@@ -1,4 +1,5 @@
-const CACHE_NAME = "gobble-guide-v1.0.2";
+
+const CACHE_NAME = "gobble-guide-v1.0.3";
 
 const urlsToCache = [
   "./",
@@ -10,12 +11,14 @@ const urlsToCache = [
   "./pages/home.html",
   "./pages/cruise-info.html",
   "./pages/schedule.html",
+  "./pages/slot-pull.html",
   "./pages/videos.html",
   "./pages/memories.html",
   "./pages/merch.html",
 
   "./images/gobble-banner.png",
   "./images/kam-logo.png",
+  "./images/channels.jpg.png",
 
   "./icons/icon-192.png",
   "./icons/icon-512.png",
@@ -61,8 +64,7 @@ self.addEventListener("activate", event => {
 
 });
 
-// FETCH (Network First)
-
+// FETCH - Network First, Cache Fallback
 self.addEventListener("fetch", event => {
 
     if (event.request.method !== "GET") return;
@@ -73,15 +75,16 @@ self.addEventListener("fetch", event => {
 
             .then(response => {
 
-                const responseClone = response.clone();
+                if (response.ok) {
 
-                caches.open(CACHE_NAME)
+                    const responseClone = response.clone();
 
-                    .then(cache => {
+                    caches.open(CACHE_NAME)
+                        .then(cache => {
+                            cache.put(event.request, responseClone);
+                        });
 
-                        cache.put(event.request, responseClone);
-
-                    });
+                }
 
                 return response;
 

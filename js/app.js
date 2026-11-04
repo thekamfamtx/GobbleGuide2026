@@ -280,7 +280,7 @@ async function loadTodaysActivities() {
     // Only run on the Home page
     if (!activityList || !dateLabel) return;
 
-const today = new Date(2026, 10, 22);
+const today = new Date();
 today.setHours(0, 0, 0, 0);
 
     const cruiseStart = new Date(2026, 10, 21);

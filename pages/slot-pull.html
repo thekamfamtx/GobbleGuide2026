@@ -1,58 +1,293 @@
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gobble Til You Jackpot! | Gobble Guide</title>
+<!-- SLOT PULL HOW IT WORKS -->
+<style>
+.slot-rules {
+    margin-top: 20px;
+}
 
-    <link rel="stylesheet" href="../css/style.css">
-</head>
+.slot-rules h2 {
+    text-align: center;
+    margin-bottom: 18px;
+}
 
-<body>
+.slot-rule {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 12px;
+    margin-bottom: 12px;
+    overflow: hidden;
+}
 
-    <div class="container">
+.slot-rule summary {
+    padding: 16px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 17px;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
 
-        <header class="hero">
-            <h1>🎰 Gobble Til You Jackpot!</h1>
-            <p>Gobble Til You Wobble Cruise 2026</p>
-        </header>
+.slot-rule summary::-webkit-details-marker {
+    display: none;
+}
 
-        <section class="card">
+.slot-rule summary::after {
+    content: "+";
+    font-size: 22px;
+    color: #f5c542;
+    flex-shrink: 0;
+}
 
-            <h2>🦃 Slot Pull Event</h2>
+.slot-rule[open] summary::after {
+    content: "−";
+}
 
-            <p><strong>📅 Date:</strong> Sunday, November 22, 2026</p>
+.slot-rule summary:hover {
+    background: rgba(255,255,255,0.08);
+}
 
-            <p><strong>🕒 Time:</strong> 12:15 PM</p>
+.slot-rule-content {
+    padding: 0 16px 16px;
+    line-height: 1.65;
+}
 
-            <p><strong>📍 Location:</strong> Casino Stage</p>
+.slot-rule-content p {
+    margin: 10px 0;
+}
 
-            <hr>
+.slot-rule-content ul {
+    padding-left: 22px;
+}
 
-            <h2>🎰 How It Works</h2>
+.slot-rule-content li {
+    margin-bottom: 8px;
+}
 
-            <p>Bring your <strong>$20 bill</strong> and join in the fun!</p>
+.slot-highlight {
+    font-weight: bold;
+    color: #f5c542;
+}
 
-            <p>We will pool everyone's money together on one slot machine. Each participant will receive a set number of spins.</p>
+.slot-final {
+    text-align: center;
+    padding: 15px 5px 5px;
+    line-height: 1.7;
+}
+</style>
 
-            <p><strong>All winnings will be split among participants!</strong></p>
+<div class="slot-rules">
 
-            <h2>📝 Sign-Up</h2>
+    <h2>🎰 How It Works</h2>
 
-            <p>Meet by the casino stage <strong>15 minutes before the event</strong> to sign up.</p>
+    <p>
+        Please take a moment to review the following rules and
+        information before participating in our group slot pull.
+    </p>
 
-            <p>Full details coming soon!</p>
+    <!-- ENTRY & REGISTRATION -->
+    <details class="slot-rule">
+        <summary>💵 Entry &amp; Registration</summary>
 
-            <h2>🦃 Spin Together. Cheer Together. Win Together!</h2>
+        <div class="slot-rule-content">
 
-        </section>
+            <p>
+                The entry fee for the slot pull is
+                <span class="slot-highlight">$20 cash per person</span>
+                for anyone wishing to participate.
+                Registration will take place 15 minutes prior to
+                the scheduled event time at the casino stage.
+                Participants must provide their $20 entry fee at
+                this time to be added to the official participant list.
+            </p>
 
-        <a href="schedule.html" class="btn">
-            🚢 Return to Gobble Guide Schedule
-        </a>
+            <p><strong>A participant is not considered registered until:</strong></p>
 
-    </div>
+            <ul>
+                <li>Their $20 entry fee has been collected, and</li>
+                <li>Their name has been added to the official registration sheet.</li>
+            </ul>
 
-</body>
-</html>
+            <p>
+                Registration will close once we reach the maximum
+                number of participants allowed or once all entry
+                fees have been collected, the money has been loaded
+                into the slot machine, and the first MAX BET button
+                has been pressed.
+            </p>
+
+            <p>
+                <strong>
+                    After registration has closed, no additional
+                    participants may join the slot pull.
+                </strong>
+            </p>
+
+        </div>
+    </details>
+
+    <!-- HOW THE SLOT PULL WORKS -->
+    <details class="slot-rule">
+        <summary>🎰 How the Slot Pull Will Work</summary>
+
+        <div class="slot-rule-content">
+
+            <p>
+                We will be playing a
+                <span class="slot-highlight">$1 denomination slot machine at MAX BET.</span>
+                Each participant will have an equal number of pulls,
+                with participants typically receiving 4–5 pulls each
+                depending on the machine selected.
+            </p>
+
+            <p>
+                All pulls will be played at the maximum bet amount.
+                All slot pull funds will be collected and loaded into
+                the machine before the first pull begins.
+            </p>
+
+            <p>
+                Participation order will follow the order in which
+                guests signed up. Please remain with the group
+                throughout the slot pull so you do not miss your turn.
+                Missed turns will not be made up.
+            </p>
+
+            <p>
+                A designated person will check participants off the
+                official list as they complete their turns and will
+                record the results of each pull.
+            </p>
+
+        </div>
+    </details>
+
+    <!-- JACKPOT & TAX RULE -->
+    <details class="slot-rule">
+        <summary>💰 Large Jackpot &amp; Tax Rule</summary>
+
+        <div class="slot-rule-content">
+
+            <p>
+                <span class="slot-highlight">
+                    If our slot pull hits a large jackpot, $2,000 or more,
+                </span>
+                we will collect the payout and move all funds except
+                the jackpot winnings to a new slot machine so the
+                remaining participants can continue playing.
+            </p>
+
+            <p>
+                We do this because many slot players believe changing
+                machines after a significant jackpot may improve
+                their chances.
+            </p>
+
+            <p>
+                If the jackpot is large enough that I am required to
+                claim it and report it for tax purposes, 25% of the
+                jackpot winnings will be retained before distribution
+                to help cover my federal tax liability as the individual
+                receiving the tax form.
+            </p>
+
+            <p>
+                The remaining winnings will then be divided among
+                the participants according to the agreed-upon payout
+                structure.
+            </p>
+
+            <p>
+                <strong>
+                    By participating in the slot pull, all participants
+                    acknowledge and agree to this tax reserve policy.
+                </strong>
+            </p>
+
+        </div>
+    </details>
+
+    <!-- PRIZE DISTRIBUTION -->
+    <details class="slot-rule">
+        <summary>🏆 Prize Distribution</summary>
+
+        <div class="slot-rule-content">
+
+            <p>
+                All winnings will be divided equally among the
+                participants. Individual payouts will be rounded
+                down to the nearest whole dollar.
+            </p>
+
+            <p>
+                Any remaining balance from the rounding will be
+                awarded to the participant who achieved the highest
+                single winning spin during the slot pull.
+            </p>
+
+            <p>
+                If two or more participants are tied for the highest
+                single winning spin, the remaining balance will be
+                divided equally among those participants.
+            </p>
+
+            <p>
+                To collect your share of the winnings, you must
+                remain with the group through the completion of
+                the slot pull.
+            </p>
+
+            <p>
+                After we cash out, please meet back at the casino
+                stage where winnings will be distributed.
+                Participants are responsible for collecting their
+                winnings at this time.
+            </p>
+
+            <p>
+                <strong>
+                    We will not be responsible for tracking down
+                    participants after the slot pull has ended to
+                    distribute unpaid winnings.
+                </strong>
+            </p>
+
+        </div>
+    </details>
+
+    <!-- FINAL REMINDER -->
+    <details class="slot-rule">
+        <summary>🦃 Final Reminder</summary>
+
+        <div class="slot-rule-content slot-final">
+
+            <p>
+                Remember, this slot pull is meant to be a fun group
+                activity where we can enjoy some casino time together,
+                meet new people, and hopefully walk away with a
+                little extra cash.
+            </p>
+
+            <p>
+                We encourage everyone to cheer on each participant,
+                celebrate the wins, and enjoy the experience with
+                the group.
+            </p>
+
+            <p>
+                Whether we hit a big jackpot or simply have a great
+                time together, the goal is to have fun and make
+                memories with everyone on the cruise.
+            </p>
+
+            <p class="slot-highlight">
+                Good Luck &amp; Happy Spinning! 🎰🦃
+            </p>
+
+        </div>
+    </details>
+
+</div>
+<!-- END SLOT PULL HOW IT WORKS -->

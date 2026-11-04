@@ -159,6 +159,7 @@ const filesToDownload = [
     basePath + "pages/home.html",
     basePath + "pages/cruise-info.html",
     basePath + "pages/schedule.html",
+    basePath+"pages/slot-pull.html",
     basePath + "pages/videos.html",
     basePath + "pages/memories.html",
     basePath + "pages/merch.html",

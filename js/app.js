@@ -137,7 +137,7 @@ if (shipButton) {
 
         try {
 
-  const cache = await caches.open("gobble-guide-v1.0.3");
+  const cache = await caches.open("gobble-guide-v1.0.4");
 
             const basePath = window.location.pathname.includes("/pages/")
                 ? "../"
@@ -160,7 +160,9 @@ if (shipButton) {
                 basePath + "images/kam-logo.png",
                 basePath + "icons/icon-192.png",
                 basePath + "icons/icon-512.png",
+               basePath + "carnival-liberty-deck-plan-pdf.pdf",
                 basePath + "icons/apple-touch-icon.png"
+                
             ];
 
             offlineStatus.innerHTML =

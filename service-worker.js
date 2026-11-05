@@ -1,9 +1,10 @@
 
-const CACHE_NAME = "gobble-guide-v1.0.3";
+const CACHE_NAME = "gobble-guide-v1.0.4";
 
 const urlsToCache = [
   "./",
   "./index.html",
+  "./carnival-liberty-deck-plan-pdf.pdf",
   "./manifest.json",
   "./css/style.css",
   "./js/app.js",

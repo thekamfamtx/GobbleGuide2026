@@ -270,9 +270,145 @@ window.addEventListener("load", () => {
 
 
 // ======================================
-// TODAY'S KAM FAM ACTIVITIES
-// Reads directly from schedule.html
+// CRUISE DAY + TODAY'S KAM FAM ACTIVITIES
+// Reads cruise-info.html and schedule.html
 // ======================================
+
+
+// ---------- TODAY'S CRUISE DAY ----------
+
+async function loadTodaysCruiseDay() {
+
+    const dateLabel = document.getElementById("todayDateLabel");
+
+    // Only run on the Home page
+    if (!dateLabel) return;
+
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+
+    const cruiseStart = new Date(2026, 10, 21);
+    const cruiseEnd = new Date(2026, 10, 29);
+
+    // Only display during the cruise
+    if (today < cruiseStart || today > cruiseEnd) return;
+
+    // Calculate the current cruise day
+    const cruiseDay = Math.floor(
+        (today - cruiseStart) / 86400000
+    ) + 1;
+
+    // Create the display above Today's Activities
+    let cruiseDayDisplay = document.getElementById("todaysCruiseDay");
+
+    if (!cruiseDayDisplay) {
+
+        cruiseDayDisplay = document.createElement("div");
+
+        cruiseDayDisplay.id = "todaysCruiseDay";
+
+        cruiseDayDisplay.style.background = "#FFF3E0";
+        cruiseDayDisplay.style.border = "1px solid #F7941D";
+        cruiseDayDisplay.style.borderRadius = "10px";
+        cruiseDayDisplay.style.padding = "12px";
+        cruiseDayDisplay.style.marginBottom = "15px";
+        cruiseDayDisplay.style.textAlign = "center";
+        cruiseDayDisplay.style.color = "#333";
+
+        dateLabel.parentNode.insertBefore(
+            cruiseDayDisplay,
+            dateLabel
+        );
+
+    }
+
+    cruiseDayDisplay.textContent =
+        "🚢 Loading today's cruise itinerary...";
+
+    try {
+
+        // Read the existing Cruise Information page
+        const response = await fetch("cruise-info.html");
+
+        if (!response.ok) {
+            throw new Error("Unable to load cruise information.");
+        }
+
+        const cruiseHTML = await response.text();
+
+        const parser = new DOMParser();
+
+        const cruiseDocument = parser.parseFromString(
+            cruiseHTML,
+            "text/html"
+        );
+
+        const cruiseDays = cruiseDocument.querySelectorAll(
+            ".cruise-day"
+        );
+
+        let todaysCruiseInfo = null;
+
+        cruiseDays.forEach(day => {
+
+            const dayNumbers = (
+                day.dataset.cruiseDays || ""
+            ).split(",").map(number => Number(number.trim()));
+
+            if (dayNumbers.includes(cruiseDay)) {
+                todaysCruiseInfo = day;
+            }
+
+        });
+
+        if (!todaysCruiseInfo) {
+
+            cruiseDayDisplay.textContent =
+                "🚢 Cruise Day " + cruiseDay;
+
+            return;
+
+        }
+
+        const dayType = todaysCruiseInfo.dataset.dayType;
+        const dayLabel = todaysCruiseInfo.dataset.dayLabel;
+        const location = todaysCruiseInfo.dataset.location;
+
+        let icon = "🚢";
+
+        if (dayType === "embarkation") {
+            icon = "⚓";
+        } else if (dayType === "port") {
+            icon = "🏝️";
+        } else if (dayType === "disembarkation") {
+            icon = "⚓";
+        }
+
+        let displayText =
+            icon + " Cruise Day " + cruiseDay +
+            " – " + dayLabel;
+
+        if (location) {
+            displayText += " – " + location;
+        }
+
+        cruiseDayDisplay.textContent = displayText;
+
+    }
+
+    catch(error) {
+
+        console.error("Cruise Day error:", error);
+
+        cruiseDayDisplay.textContent =
+            "🚢 Cruise Day " + cruiseDay;
+
+    }
+
+}
+
+
+// ---------- TODAY'S KAM FAM ACTIVITIES ----------
 
 async function loadTodaysActivities() {
 
@@ -282,8 +418,8 @@ async function loadTodaysActivities() {
     // Only run on the Home page
     if (!activityList || !dateLabel) return;
 
-const today = new Date();
-today.setHours(0, 0, 0, 0);
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
 
     const cruiseStart = new Date(2026, 10, 21);
     const cruiseEnd = new Date(2026, 10, 29);
@@ -315,8 +451,7 @@ today.setHours(0, 0, 0, 0);
 
     try {
 
-        // The schedule page is in the same folder as home.html.
-        // This also allows the service worker to provide its cached copy offline.
+        // Read the existing Schedule page
         const response = await fetch("schedule.html");
 
         if (!response.ok) {
@@ -326,6 +461,7 @@ today.setHours(0, 0, 0, 0);
         const scheduleHTML = await response.text();
 
         const parser = new DOMParser();
+
         const scheduleDocument = parser.parseFromString(
             scheduleHTML,
             "text/html"
@@ -464,7 +600,7 @@ today.setHours(0, 0, 0, 0);
 
             }
 
-            // Preserve event detail links, such as the Slot Pull details.
+            // Preserve event detail links
             const eventLink = event.querySelector("a.btn");
 
             if (eventLink) {
@@ -495,6 +631,12 @@ today.setHours(0, 0, 0, 0);
     }
 
 }
+
+
+// Load both sections when the Home page opens.
+loadTodaysCruiseDay();
+loadTodaysActivities();
+
 
 
 // Load today's activities when the Home page opens.
